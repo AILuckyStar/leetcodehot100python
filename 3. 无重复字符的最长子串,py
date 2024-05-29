@@ -1,0 +1,16 @@
+class Solution:
+    def lengthOfLongestSubstring(self,s):
+        set1 = set()
+        n = len(s)
+        ans = 0
+        right = 0
+        for left in range(n):
+            while right<n and s[right] not in set1:
+                set1.add(s[right])
+                right+=1
+            ans = max(ans,right-left)
+            set1.remove(s[left])
+        return ans
+s = "abcabcbb"
+so = Solution()
+print(so.lengthOfLongestSubstring(s))
