@@ -1,0 +1,30 @@
+class Solution:
+    def rotate(self,matrix):
+        m=len(matrix)
+        n=len(matrix[0])
+        for i in range(m//2):
+            for j in range(n):
+                matrix[i][j],matrix[m-i-1][j] = matrix[m-i-1][j],matrix[i][j]
+        for i in range(m):
+            for j in range(i):
+                matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
+
+s = Solution()
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+s.rotate(matrix)
+print(matrix)
+
+
+
+
+                # 在Python中， / 和 // 都是用于除法运算的符号，但是它们之间有一个重要的区别：
+                #
+                # / 表示“真除法”（true
+                # division），它会返回一个浮点数作为结果，即使两个操作数都是整数。例如，7 / 2
+                # 的结果是
+                # 3.5。
+                #
+                # // 表示“地板除法”（floor
+                # division），它会返回一个整数结果，即结果会被向下取整到最接近的整数。例如，7 // 2
+                # 的结果是
+                # 3。
