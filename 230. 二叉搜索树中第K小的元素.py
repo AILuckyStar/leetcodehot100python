@@ -23,3 +23,14 @@ class Solution:
         self.k=k
         self.dfs(root)
         return  self.res
+
+root = TreeNode(5,
+                TreeNode(3, TreeNode(2), TreeNode(4)),
+                TreeNode(7, None, TreeNode(8)))
+
+
+solution = Solution() 
+
+k = 3
+solution.kthSmallest(root, k)
+print(solution.res)
