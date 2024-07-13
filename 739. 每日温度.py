@@ -3,7 +3,7 @@ class Solution:
         l=len(temperatures)
         ans = [0]*l
         stk=[0]
-        for i in range(l):
+        for i in range(1,l):
             if temperatures[i]<=temperatures[stk[-1]]:
                 stk.append(i)
             else:
