@@ -1,0 +1,14 @@
+class Solution:
+    def isValid(self,s):
+        dic={')':'(','}':'{',']':'['}
+        stk=[]
+        for x in s:
+            if x not in dic:
+                stk.append(x)
+            else:
+                if not stk or stk.pop()!=dic[x]:
+                    return False
+        if stk :
+            return False
+        return True
+
